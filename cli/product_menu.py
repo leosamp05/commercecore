@@ -20,16 +20,22 @@ def product_menu(inventory_service):
             separator = '-' * 75
             
             print(separator)
-            print(f"{'SKU':<22}{'NAME':<30}{'PREZZO':<13}{'STOCK':<8}")
+            print(f"{'SKU':<22}{'NOME':<30}{'PREZZO':<13}{'STOCK':<8}")
             print(separator)
             
-            for product in products:
-                print(
-                    f"{product.sku:<22}"
-                    f"{product.name:<30}"
-                    f"€{product.price:<12.2f}"
-                    f"{product.stock:<8}"       
-                )
+            if not products:
+                print('Lista vuota'.center(75))
+            else:
+                for product in products:
+                    print(
+                        f"{product.sku:<22}"
+                        f"{product.name:<30}"
+                        f"€{product.price:<12.2f}"
+                        f"{product.stock:<8}"       
+                    )
+                
+            print(separator)
+            
             
             
         elif scelta == 2:
