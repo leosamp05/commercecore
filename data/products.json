@@ -1,8 +1,16 @@
 [
     {
-        "sku": "10070",
-        "name": "Macbook Air M4",
-        "price": 800,
-        "stock": 7
+        "sku": "P001",
+        "name": "Lampada W01",
+        "category": "Home",
+        "price": 65.56,
+        "stock": 13
+    },
+    {
+        "sku": "P002",
+        "name": "Scrivania MH8",
+        "category": "Office",
+        "price": 356.01,
+        "stock": 3
     }
 ]
