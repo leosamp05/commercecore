@@ -1,6 +1,6 @@
 def product_menu(inventory_service) -> str:
     while True:
-        print('\n========PRODOTTI========')
+        print('\n============= PRODOTTI =============')
         print('1. Visualizza Prodotti')
         print('2. Aggiungi un Prodotto')
         print('3. Modifica un Prodotto')

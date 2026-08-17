@@ -1,0 +1,15 @@
+[
+    {
+        "order_id": "ORD-0",
+        "created": "2026-08-17T00:09:24.862939",
+        "status": "CANCELLED",
+        "products": [
+            {
+                "sku": "P001",
+                "quantity": 3,
+                "price": 65.56
+            }
+        ],
+        "total": 196.68
+    }
+]

@@ -6,7 +6,7 @@ class InventoryService:
     def __init__(self) -> None:
         self.repository = ProductRepository()
         self.products = self.repository.load_products()
-
+    
     def add_product(self, sku: str, name: str, category: str, price: float, stock: int) -> str | None:
         for product in self.products:
             if sku == product.sku:
