@@ -1,41 +1,50 @@
 import json
+from json import JSONDecodeError
+
 from models.product import Product
 
 
 class ProductRepository:
-    def load_products(self) -> list:
-        with open("data/products.json", "r") as file:
-            data = json.load(file)
+    FILE_PATH = "data/products.json"
+
+    def load_products(self) -> list[Product]:
+        try:
+            with open(self.FILE_PATH, "r", encoding="utf-8") as file:
+                data = json.load(file)
+        except (FileNotFoundError, JSONDecodeError):
+            return []
 
         products = []
 
         for item in data:
-            product = Product(
-                item["sku"],
-                item["name"],
-                item["category"],
-                item["price"],
-                item["stock"]
+            products.append(
+                Product(
+                    item["sku"],
+                    item["name"],
+                    item["category"],
+                    item["price"],
+                    item["stock"]
+                )
             )
 
-            products.append(product)
+        return products
 
-        return products           
-            
-    def save_products(self, products) -> None:
+    def save_products(self, products: list[Product]) -> None:
         data = []
+
         for product in products:
-            item = {
+            data.append({
                 "sku": product.sku,
                 "name": product.name,
                 "category": product.category,
                 "price": product.price,
                 "stock": product.stock
-            }
-            
-            data.append(item)
-            
-        with open("data/products.json", "w") as file:
-            json.dump(data, file, indent=4)
-            
-        
+            })
+
+        with open(self.FILE_PATH, "w", encoding="utf-8") as file:
+            json.dump(
+                data,
+                file,
+                indent=4,
+                ensure_ascii=False
+            )

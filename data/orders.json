@@ -1,15 +1,24 @@
 [
     {
-        "order_id": "ORD-0",
-        "created": "2026-08-17T00:09:24.862939",
+        "order_id": "ORD-1",
+        "created": "2026-08-17T15:24:02.014995",
         "status": "CANCELLED",
         "products": [
             {
                 "sku": "P001",
-                "quantity": 3,
-                "price": 65.56
+                "name": "Lampada W01",
+                "quantity": 5,
+                "price": 65.56,
+                "subtotal": 327.8
+            },
+            {
+                "sku": "P002",
+                "name": "Scrivania MH8",
+                "quantity": 1,
+                "price": 356.01,
+                "subtotal": 356.01
             }
         ],
-        "total": 196.68
+        "total": 683.81
     }
 ]
